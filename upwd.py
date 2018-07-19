@@ -48,27 +48,41 @@ def connect(ip_address,u_name,pwd):
 		return False
 
 def changepassword(ip_address,u_name,pwd):
-	print('The currently configured password is one of the commonly used ones. We suggest you to change the password, or it may be compromised in the future')
-	b=input('Do you want to change the password? Y(yes), N (no): ')
+	print('The currently configured password is one of the commonly used ones. We suggest you to change the password, otherwise your device may be 	compromised')
+	b=raw_input('Do you want to change the password? Y(yes), N (no): ')
+	print b
 	if b=='y' or b=='Y':
 		
 		while True:
-			pd=getpass("New password:")
-			pd1=getpass("Retype new password:")
-			if pd==pd1:
-				break;
-		dev = Device(host=ip_address, user=u_name, passwd=pwd)
+	#		pd=getpass("New password:")
+	#		pd1=getpass("Retype new password:")
+	#		if pd==pd1:
+	#			break;
+		# dev = Device(host=ip_address, user=u_name, passwd=pwd)
+		# dev.open()
+		# uc = UserConfigTable(dev)
+		# uc.username=u_name	
+		# uc.password=pd
+		# uc.append()
+		# uc.set()
+		
+		dev = Device(host='192.168.56.4', user='root', password='pass4root')
 		dev.open()
-		uc = UserConfigTable(dev)
-		uc.username=u_name	
-		uc.password=pd
-		uc.append()
-		configXML = uc.get_table_xml()
-		if (configXML is not None):
-    			print (etree.tostring(configXML, encoding='unicode', pretty_print=True))
+		cu=Config(dev)
+		#############################
+		new_User='set system login user saran class read-only authentication plain-text-password-value juniper12345'
+		# pass_New='juniper123'
+		# pass_Repeat='juniper123'
+		##############################
 
-		uc.set()
+		cu.load(new_User, format='set')
+		# cu.load(pass_New,format='set')
+		# cu.load(pass_Repeat,format='set')
+
+		# configXML = uc.get_table_xml()
+		# if (configXML is not None):
+    	# 		print (etree.tostring(configXML, encoding='unicode', pretty_print=True))
 	
-		dev.close()
+	dev.close()
 			
 main()

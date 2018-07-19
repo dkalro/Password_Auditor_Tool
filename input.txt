@@ -1,4 +1,3 @@
-dkalro	Password1
-dkalro1	Password1
+root	pass4root
 psdsn	Password23
-deepak	deepak123
+
