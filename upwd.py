@@ -2,6 +2,7 @@ import paramiko
 from getpass import getpass
 from jnpr.junos import Device
 from jnpr.junos.utils.config import Config
+from jnpr.junos.cfg import Resource
 from jnpr.junos.factory.factory_loader import FactoryLoader
 import yaml
 #from myTables.ConfigTables import UserConfigTable
@@ -47,7 +48,7 @@ def connect(ip_address,u_name,pwd):
 		return False
 
 def changepassword(ip_address,u_name,pwd):
-	print('The currently configured password is one of the commonly used ones. We suggest you to change the password, otherwise your device may be 	compromised')
+	print('The currently configured password is one of the commonly used ones. We suggest you to change the password, or it may be compromised in the future')
 	b=input('Do you want to change the password? Y(yes), N (no): ')
 	if b=='y' or b=='Y':
 		
@@ -62,11 +63,11 @@ def changepassword(ip_address,u_name,pwd):
 		uc.username=u_name	
 		uc.password=pd
 		uc.append()
-		uc.set()
-		
 		configXML = uc.get_table_xml()
 		if (configXML is not None):
     			print (etree.tostring(configXML, encoding='unicode', pretty_print=True))
+
+		uc.set()
 	
 		dev.close()
 			
