@@ -1,2 +1,2 @@
-dkalro1	Password1
+root	pass4root
 psdsn	Password23
