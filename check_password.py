@@ -8,7 +8,6 @@ from jnpr.junos.exception import LockError
 from jnpr.junos.exception import UnlockError
 from jnpr.junos.exception import ConfigLoadError
 from jnpr.junos.exception import CommitError
-
 import yaml
 
 myYAML = """
@@ -70,13 +69,16 @@ def changepassword(ip_address,u_name,pwd):
 		while True:
 			pd=getpass("New password:")
 			pd1=getpass("Retype new password:")
-			if pd==pd1:
+			if pd != pd1:
+				print('Passwords do not match. Please try again')
+			elif pd==pd1 and pd==pwd:
+				print(' New Password cannot be same as the old password. Please try again.')
+			elif pd==pd1 and pd != pwd:
 				break;
 		users = UserTable(dev)
 		users.get()
 		cls=users[u_name].userclass
 		command="set system login user " +u_name+ " class "+cls+ " authentication plain-text-password-value " +pd
-		print(command)
 
 		dev.bind(cu=Config)
 
@@ -105,7 +107,6 @@ def changepassword(ip_address,u_name,pwd):
 
 		print ("Committing the configuration")
 		try:
-			print('commit')
 			dev.cu.commit(comment='Loaded by example.')
 		except CommitError as err:
 			print ("Unable to commit configuration: {0}".format(err))
