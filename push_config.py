@@ -52,11 +52,11 @@ def main():
         print ("Unable to commit configuration: {0}".format(err))
         print ("Unlocking the configuration")
         try:
-            dev.cu.unlock()
+        	dev.cu.unlock()
         except UnlockError as err:
-            print ("Unable to unlock configuration: {0}".format(err))
-        dev.close()
-        return
+        	print ("Unable to unlock configuration: {0}".format(err))
+        	dev.close()
+        	return
 
     print ("Unlocking the configuration")
     try:

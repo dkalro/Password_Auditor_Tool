@@ -1,3 +1,2 @@
-root	pass4root
 psdsn	Password23
-
+deepak1	deepak123
