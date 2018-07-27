@@ -39,14 +39,12 @@ def changepassword(ip_address, u_name, pwd):
         'The currently configured password is one of the commonly used ones. We suggest you to change the password, it maybe compromised in the future')
     b = input('Do you want to change the password? Y(yes), N (no): ')
     if b == 'y' or b == 'Y':
-
         try:
             dev = Device(host=ip_address, user=u_name, passwd=pwd)
             dev.open()
         except ConnectError as err:
             print("Cannot connect to device: {0}".format(err))
             return
-
         while True:
             pd = getpass("New password:")
             pd1 = getpass("Retype new password:")
