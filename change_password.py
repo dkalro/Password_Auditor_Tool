@@ -9,6 +9,7 @@ from jnpr.junos.exception import ConfigLoadError
 from jnpr.junos.exception import CommitError
 import yaml
 import enable_netconf as netconf
+import disable_netconf as del_netconf
 
 myYAML = """
 ---
@@ -38,6 +39,7 @@ def changepassword(ip_address, u_name, pwd):
         'The currently configured password is one of the commonly used ones. We suggest you to change the password, it maybe compromised in the future')
     b = input('Do you want to change the password? Y(yes), N (no): ')
     if b == 'y' or b == 'Y':
+        print('Enabling netconf')
         netconf.configure_netconf(ip_address,u_name,pwd)
         try:
             dev = Device(host=ip_address, user=u_name, passwd=pwd)
@@ -104,6 +106,8 @@ def changepassword(ip_address, u_name, pwd):
 
         # End the NETCONF session and close the connection
         dev.close()
+        print('Deleting netconf')
+        del_netconf.delete_netconf(ip_address,u_name,pd)
 
 
 if __name__ == "__main__":
