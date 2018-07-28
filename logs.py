@@ -30,6 +30,7 @@ def connect(ip_address, u_name, pwd):
             a= dev.cli(command)
             f.write('Command: '+command)
             f.write(a+'\n'+'\n'+'\n')
+    dev.close()
 
 
 if __name__ == '__main__':
