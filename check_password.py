@@ -1,7 +1,5 @@
 import paramiko
 import subprocess
-#import platform
-#from subprocess import PIPE,Popen
 import ipaddress as ipa
 
 
@@ -10,8 +8,9 @@ def main():
     print(lines1)
     lines = open("input.txt", "r").readlines()
     print(lines)
-    f = open('filtered_ip.txt', 'w+')
+    f = open('ip_at_risk.txt', 'w+')
     for i in lines1:
+        i=i.strip()
         if '/' in i:
             network=ipa.ip_network(i.strip())
             print(network)
@@ -19,15 +18,15 @@ def main():
                 j=str(j)
                 if pingtest(j)==True:
                         for l in lines:
-                            splitted = l.strip().split("\t")
+                            splitted = l.strip().split('\t')
                             print(splitted[0], splitted[1])
                             if connect(j, splitted[0], splitted[1]) == True:
                                 f.write(j + '\t' + splitted[0] + '\t' + splitted[1] + '\n')
 
 
-        elif pingtest(i)==True:
+        elif pingtest(i.strip())==True:
             for l in lines:
-                splitted = l.strip().split("\t")
+                splitted = l.strip().split('\t')
                 print(splitted[0], splitted[1])
                 if connect(i, splitted[0], splitted[1]) == True:
                     f.write(i + '\t' + splitted[0] + '\t' + splitted[1] + '\n')

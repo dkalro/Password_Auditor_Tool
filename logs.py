@@ -1,4 +1,6 @@
 from jnpr.junos import Device
+import enable_netconf as netconf
+import disable_netconf as del_netconf
 
 def main():
     lines = open("info.txt", "r").readlines()
@@ -6,7 +8,11 @@ def main():
     for l in lines:
         splitted = l.strip().split("\t")
         print(splitted[0], splitted[1], splitted[2])
+        print("Enabling netconf on the device")
+        netconf.configure_netconf(splitted[0], splitted[1], splitted[2])
         connect(splitted[0], splitted[1], splitted[2])
+        print("Disabling netconf on the device")
+        del_netconf.delete_netconf(splitted[0], splitted[1], splitted[2])
 
 
 def connect(ip_address, u_name, pwd):

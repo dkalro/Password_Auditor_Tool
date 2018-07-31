@@ -26,7 +26,7 @@ globals().update(FactoryLoader().load(yaml.load(myYAML)))
 
 
 def main():
-    lines=open("filtered_ip.txt", "r").readlines()
+    lines=open("ip_at_risk.txt", "r").readlines()
     print(lines)
     for l in lines:
         splitted = l.strip().split("\t")
@@ -37,8 +37,14 @@ def main():
 def changepassword(ip_address, u_name, pwd):
     print(
         'The currently configured password is one of the commonly used ones. We suggest you to change the password, it maybe compromised in the future')
-    b = input('Do you want to change the password? Y(yes), N (no): ')
-    if b == 'y' or b == 'Y':
+
+    while True:
+        b = input('Do you want to change the password? Y(yes), N (no): ')
+        if b == 'y' or b == 'Y' or b=='n' or b=='N':
+            break
+        else:
+            print('Invalid input. Please try again')
+    if b=='y' or b=='Y':
         print('Enabling netconf')
         netconf.configure_netconf(ip_address,u_name,pwd)
         try:
