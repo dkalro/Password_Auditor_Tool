@@ -55,11 +55,12 @@ def changepassword(ip_address, u_name, pwd):
             return
         while True:
             pd = getpass("New password:")
+            if pd==pwd:
+                print('New Password cannot be same as the old password. Please try again.')
+                continue
             pd1 = getpass("Retype new password:")
             if pd != pd1:
                 print('Passwords do not match. Please try again')
-            elif pd == pd1 and pd == pwd:
-                print('New Password cannot be same as the old password. Please try again.')
             elif pd == pd1 and pd != pwd:
                 break;
         users = UserTable(dev)
