@@ -16,4 +16,4 @@ def delete_netconf(ip_address,username,password):
         child.expect('#')
         child.sendline('commit and-quit')
         child.expect('>')
-        print(child.before)
+       	#print(child.before)

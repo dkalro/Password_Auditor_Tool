@@ -40,11 +40,11 @@ def changepassword(ip_address, u_name, pwd):
 
     while True:
         b = input('Do you want to change the password? Y(yes), N (no): ')
-        if b == 'y' or b == 'Y' or b=='n' or b=='N':
+        if b == 'y' or b == 'Y' or b=='n' or b=='N' or b=='yes'or b=='Yes':
             break
         else:
             print('Invalid input. Please try again')
-    if b=='y' or b=='Y':
+    if b=='y' or b=='Y' or b=='yes' or b=='YES':
         print('Enabling netconf')
         netconf.configure_netconf(ip_address,u_name,pwd)
         try:
