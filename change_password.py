@@ -27,94 +27,99 @@ globals().update(FactoryLoader().load(yaml.load(myYAML)))
 
 def main():
     lines=open("ip_at_risk.txt", "r").readlines()
-    print(lines)
+    #print(lines)
     for l in lines:
         splitted = l.strip().split("\t")
-        print(splitted[0],splitted[1],splitted[2])
+        print("######################################################################################")
+        print('IP address: '+splitted[0]+ '\nUsername: '+splitted[1])
+        #print(splitted[0],splitted[1],splitted[2])
         changepassword(splitted[0],splitted[1],splitted[2])
 
 
 def changepassword(ip_address, u_name, pwd):
     print(
-        'The currently configured password is one of the commonly used ones. We suggest you to change the password, it maybe compromised in the future')
+        'The currently configured password is one of the commonly used ones.\nWe suggest you to change the password, otherwise it maybe compromised in the future')
 
     while True:
-        b = input('Do you want to change the password? Y(yes), N (no): ')
+        b = input('Do you want to change the password for IP address: '+ip_address+' and Username: '+u_name+'? Y(yes), N (no): ')
         if b == 'y' or b == 'Y' or b=='n' or b=='N' or b=='yes'or b=='Yes':
             break
         else:
             print('Invalid input. Please try again')
     if b=='y' or b=='Y' or b=='yes' or b=='YES':
-        print('Enabling netconf')
-        netconf.configure_netconf(ip_address,u_name,pwd)
-        try:
-            dev = Device(host=ip_address, user=u_name, passwd=pwd)
-            dev.open()
-        except ConnectError as err:
-            print("Cannot connect to device: {0}".format(err))
+        if netconf.configure_netconf(ip_address,u_name,pwd)==False:
+            print('User does not have the correct permissions to change the configuration.\nPlease change the user class and try again.')
             return
-        while True:
-            pd = getpass("New password:")
-            if pd==pwd:
-                print('New Password cannot be same as the old password. Please try again.')
-                continue
-            pd1 = getpass("Retype new password:")
-            if pd != pd1:
-                print('Passwords do not match. Please try again')
-            elif pd == pd1 and pd != pwd:
-                break;
-        users = UserTable(dev)
-        users.get()
-        cls = users[u_name].userclass
-        command = "set system login user " + u_name + " class " + cls + " authentication plain-text-password-value " + pd
-
-        dev.bind(cu=Config)
-
-        # Lock the configuration, load configuration changes, and commit
-        print("Locking the configuration")
-        try:
-            dev.cu.lock()
-        except LockError as err:
-            print("Unable to lock configuration: {0}".format(err))
-            dev.close()
-            return
-
-        print("Loading configuration changes")
-        try:
-            dev.cu.load(command, format='set')
-        except (ConfigLoadError, Exception) as err:
-            print("Unable to load configuration changes: {0}".format(err))
-            print("Unlocking the configuration")
+        else:
+            print('Enabling netconf')
             try:
-                dev.cu.unlock()
-            except UnlockError:
-                print("Unable to unlock configuration: {0}".format(err))
+                dev = Device(host=ip_address, user=u_name, passwd=pwd)
+                dev.open()
+            except ConnectError as err:
+                print("Cannot connect to device: {0}".format(err))
+                return
+            while True:
+                pd = getpass("New password:")
+                if pd==pwd:
+                    print('New Password cannot be same as the old password. Please try again.')
+                    continue
+                pd1 = getpass("Retype new password:")
+                if pd != pd1:
+                    print('Passwords do not match. Please try again')
+                elif pd == pd1 and pd != pwd:
+                    break;
+            users = UserTable(dev)
+            users.get()
+            cls = users[u_name].userclass
+            command = "set system login user " + u_name + " class " + cls + " authentication plain-text-password-value " + pd
+
+            dev.bind(cu=Config)
+
+            # Lock the configuration, load configuration changes, and commit
+            print("Locking the configuration")
+            try:
+                dev.cu.lock()
+            except LockError as err:
+                print("Unable to lock configuration: {0}".format(err))
                 dev.close()
                 return
 
-        print("Committing the configuration")
-        try:
-            dev.cu.commit(comment='Loaded by example.')
-        except CommitError as err:
-            print("Unable to commit configuration: {0}".format(err))
+            print("Loading configuration changes")
+            try:
+                dev.cu.load(command, format='set')
+            except (ConfigLoadError, Exception) as err:
+                print("Unable to load configuration changes: {0}".format(err))
+                print("Unlocking the configuration")
+                try:
+                    dev.cu.unlock()
+                except UnlockError:
+                    print("Unable to unlock configuration: {0}".format(err))
+                    dev.close()
+                    return
+
+            print("Committing the configuration")
+            try:
+                dev.cu.commit(comment='Loaded by example.')
+            except CommitError as err:
+                print("Unable to commit configuration: {0}".format(err))
+                print("Unlocking the configuration")
+                try:
+                    dev.cu.unlock()
+                except UnlockError as err:
+                    print("Unable to unlock configuration: {0}".format(err))
+                    dev.close()
+                    return
+
             print("Unlocking the configuration")
             try:
                 dev.cu.unlock()
             except UnlockError as err:
                 print("Unable to unlock configuration: {0}".format(err))
-                dev.close()
-                return
 
-        print("Unlocking the configuration")
-        try:
-            dev.cu.unlock()
-        except UnlockError as err:
-            print("Unable to unlock configuration: {0}".format(err))
-
-        # End the NETCONF session and close the connection
-        dev.close()
-        print('Deleting netconf')
-        del_netconf.delete_netconf(ip_address,u_name,pd)
+            # End the NETCONF session and close the connection
+            dev.close()
+            print('Deleting netconf')
+            del_netconf.delete_netconf(ip_address,u_name,pd)
 
 
 if __name__ == "__main__":

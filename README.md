@@ -11,7 +11,7 @@ Password Validation:
 2. Add the management IP of the device or the subnet the device is a part of to `ip.txt` file. Each IP address or the subnet should be inserted on a separate line in the file.
 3. Run `check_password.py` file.
 4. The IP addresses for which the ssh login is successful will be stored in `ip_at_risk.txt` file along with the username/password combination with which the login was successful.
-5. Run 'change_password.py' file. It will ask you whether you want to change the password for the the 1st IP address in `'ip_at_risk.txt'` file. If you say yes then it will prompt you to enter the password. If you say no then the script moves onto the 2nd IP address in the `'ip_at_risk.txt'` file.
+5. Run `change_password.py` file. It will ask you whether you want to change the password for the the 1st IP address in `ip_at_risk.txt` file. If you say yes then it will prompt you to enter the password. If you say no then the script moves onto the 2nd IP address in the `ip_at_risk.txt` file.
 
 
 
