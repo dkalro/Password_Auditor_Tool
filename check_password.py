@@ -5,15 +5,15 @@ import ipaddress as ipa
 
 def main():
     lines1 = open("ip.txt", "r").readlines()
-    print(lines1)
+    #print(lines1)
     lines = open("input.txt", "r").readlines()
-    print(lines)
+    #print(lines)
     f = open('ip_at_risk.txt', 'w+')
     for i in lines1:
         i=i.strip()
         if '/' in i:
             network=ipa.ip_network(i.strip())
-            print(network)
+            #print(network)
             for j in network.hosts():
                 j=str(j)
                 if pingtest(j)==True:

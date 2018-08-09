@@ -1,6 +1,5 @@
-psdsn	Password123
+psdsn	Password1234
 deepak	deepak123
 deepak1	deepak1
-deepak2	deepak2
 admin	juniper123
 super-admin	admin1
