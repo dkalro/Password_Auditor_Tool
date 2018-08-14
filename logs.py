@@ -4,10 +4,11 @@ import disable_netconf as del_netconf
 
 def main():
     lines = open("info.txt", "r").readlines()
-    print(lines)
+    #print(lines)
     for l in lines:
         splitted = l.strip().split("\t")
-        print(splitted[0], splitted[1], splitted[2])
+        #print(splitted[0], splitted[1], splitted[2])
+        print('IP address: ' + splitted[0] + '\nUsername: ' + splitted[1])
         print("Enabling netconf on the device")
         netconf.configure_netconf(splitted[0], splitted[1], splitted[2])
         connect(splitted[0], splitted[1], splitted[2])

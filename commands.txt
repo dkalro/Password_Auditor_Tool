@@ -1,3 +1,4 @@
 show chassis hardware
 show version
 show system commit
+show configuration system services

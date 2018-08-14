@@ -1,0 +1,80 @@
+IP address: 10.19.11.29
+Model: ex4300-48t
+
+Command: show chassis hardware
+Hardware inventory:
+Item             Version  Part number  Serial number     Description
+Chassis                                PE3717020532      EX4300-48T
+Routing Engine 0 REV 23   650-044931   PE3717020532      EX4300-48T
+FPC 0            REV 23   650-044931   PE3717020532      EX4300-48T
+  CPU                     BUILTIN      BUILTIN           FPC CPU
+  PIC 0          REV 23   BUILTIN      BUILTIN           48x 10/100/1000 Base-T
+  PIC 1          REV 23   BUILTIN      BUILTIN           4x 40GE QSFP+
+  PIC 2          REV 02   611-063980   MY3717200204      4x 1G/10G SFP/SFP+
+Power Supply 0   REV 01   740-046873   1EDE7011204       JPSU-350-AC-AFO-A
+Fan Tray 0                                               Fan Module, Airflow Out (AFO)
+Fan Tray 1                                               Fan Module, Airflow Out (AFO)
+
+
+
+Command: show version
+fpc0:
+--------------------------------------------------------------------------
+Hostname: EX4300-48T-16
+Model: ex4300-48t
+Junos: 15.1R4.6
+JUNOS EX  Software Suite [15.1R4.6]
+JUNOS FIPS mode utilities [15.1R4.6]
+JUNOS Online Documentation [15.1R4.6]
+JUNOS EX 4300 Software Suite [15.1R4.6]
+JUNOS Web Management Platform Package [15.1R4.6]
+JUNOS py-base-powerpc [15.1R4.6]
+
+
+
+Command: show system commit
+0   2018-08-14 06:21:37 UTC by admin via cli
+1   2018-08-14 06:20:04 UTC by admin via cli
+2   2018-08-14 06:19:46 UTC by admin via cli
+3   2018-08-14 00:26:06 UTC by admin via cli
+4   2018-08-14 00:25:54 UTC by admin via cli
+5   2018-08-14 00:20:48 UTC by admin via cli
+6   2018-08-14 00:20:35 UTC by admin via cli
+7   2018-08-14 00:15:01 UTC by admin via cli
+8   2018-08-14 00:14:48 UTC by admin via cli
+9   2018-08-14 00:14:02 UTC by admin via cli
+10  2018-08-14 00:13:20 UTC by admin via cli
+11  2018-08-14 00:10:33 UTC by admin via cli
+12  2018-08-14 00:10:05 UTC by admin via cli
+13  2018-08-14 00:09:53 UTC by admin via cli
+14  2018-08-13 23:58:42 UTC by admin via cli
+15  2018-08-13 23:58:34 UTC by admin via netconf
+    Loaded by example.
+16  2018-08-13 23:57:24 UTC by admin via cli
+17  2018-08-13 17:55:19 UTC by admin via cli
+18  2018-08-13 17:55:11 UTC by admin via netconf
+    Loaded by example.
+19  2018-08-13 17:54:05 UTC by admin via cli
+20  2018-08-13 15:29:01 UTC by dkalro via cli
+21  2018-08-13 07:52:01 UTC by dkalro via netconf
+22  2018-08-13 06:37:40 UTC by jcladmin via cli
+23  2018-08-13 06:36:20 UTC by jcladmin via cli
+24  2018-08-13 06:35:57 UTC by jcladmin via cli
+25  2018-08-10 02:20:59 UTC by root via cli
+26  2018-08-10 02:20:54 UTC by root via cli
+27  2018-08-10 02:18:29 UTC by root via cli
+28  2018-08-10 02:17:59 UTC by root via other
+29  2018-08-10 02:16:38 UTC by root via other
+
+
+
+Command: show configuration system services
+ssh {
+    max-sessions-per-connection 32;
+}
+netconf {
+    ssh;
+}
+
+
+

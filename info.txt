@@ -1,2 +1,2 @@
-10.19.11.29	admin	juniper1234
-10.19.10.111	deepak	deepak123
+10.19.11.29	admin	juniper12345
+10.19.10.111	super-admin	admin123

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 apt-get update
-apt-get install python-pip3 -y
+apt-get install python3-pip -y
 apt-get install python3-dev -y
 apt-get install libxml2-dev -y
 apt-get install libxslt-dev -y

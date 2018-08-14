@@ -19,7 +19,7 @@ def main():
                 if pingtest(j)==True:
                         for l in lines:
                             splitted = l.strip().split('\t')
-                            print(splitted[0], splitted[1])
+                            #print(splitted[0], splitted[1])
                             if connect(j, splitted[0], splitted[1]) == True:
                                 f.write(j + '\t' + splitted[0] + '\t' + splitted[1] + '\n')
 
@@ -27,7 +27,7 @@ def main():
         elif pingtest(i.strip())==True:
             for l in lines:
                 splitted = l.strip().split('\t')
-                print(splitted[0], splitted[1])
+                #print(splitted[0], splitted[1])
                 if connect(i, splitted[0], splitted[1]) == True:
                     f.write(i + '\t' + splitted[0] + '\t' + splitted[1] + '\n')
     f.close()
@@ -45,7 +45,7 @@ def connect(ip_address1, u_name, pwd):
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
-        print(ip_address1)
+        #print(ip_address1)
         ssh.connect(ip_address1, username=u_name, password=pwd)
         return True
     except paramiko.AuthenticationException:

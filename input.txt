@@ -1,5 +1,5 @@
 psdsn	Password1234
 deepak	deepak123
 deepak1	deepak1
-admin	juniper123
-super-admin	admin1
+admin	juniper1234
+super-admin	admin123

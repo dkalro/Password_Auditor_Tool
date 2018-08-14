@@ -1,0 +1,88 @@
+IP address: 10.19.10.111
+Model: qfx5100-48s-6q
+
+Command: show chassis hardware
+Hardware inventory:
+Item             Version  Part number  Serial number     Description
+Chassis                                VF3715320003      QFX5100-48S-6Q
+Pseudo CB 0     
+Routing Engine 0          BUILTIN      BUILTIN           QFX Routing Engine
+FPC 0            REV 12   650-056264   VF3715320003      QFX5100-48S-6Q
+  CPU                     BUILTIN      BUILTIN           FPC CPU
+  PIC 0                   BUILTIN      BUILTIN           48x10G-6x40G
+    Xcvr 20      REV 01   740-031851   AM1508253YC       SFP-SX
+    Xcvr 21      REV 01   740-011613   PCC4ALS           SFP-SX
+    Xcvr 22      REV 02   740-013111   G163046           SFP-T
+    Xcvr 23      REV 02   740-013111   G280430           SFP-T
+Power Supply 0   REV 04   740-041741   1GA25270931       JPSU-650W-AC-AFO
+Power Supply 1   REV 04   740-041741   1GA25270933       JPSU-650W-AC-AFO
+Fan Tray 0                                               QFX5100 Fan Tray 0, Front to Back Airflow - AFO
+Fan Tray 1                                               QFX5100 Fan Tray 1, Front to Back Airflow - AFO
+Fan Tray 2                                               QFX5100 Fan Tray 2, Front to Back Airflow - AFO
+Fan Tray 3                                               QFX5100 Fan Tray 3, Front to Back Airflow - AFO
+Fan Tray 4                                               QFX5100 Fan Tray 4, Front to Back Airflow - AFO
+
+
+
+Command: show version
+fpc0:
+--------------------------------------------------------------------------
+Hostname: WFD-QFX5100-48S-18
+Model: qfx5100-48s-6q
+Junos: 14.1X53-D27.3
+JUNOS Base OS Software Suite [14.1X53-D27.3]
+JUNOS Base OS boot [14.1X53-D27.3]
+JUNOS Crypto Software Suite [14.1X53-D27.3]
+JUNOS Online Documentation [14.1X53-D27.3]
+JUNOS Kernel Software Suite [14.1X53-D27.3]
+JUNOS Packet Forwarding Engine Support (qfx-ex-x86-32) [14.1X53-D27.3]
+JUNOS Routing Software Suite [14.1X53-D27.3]
+JUNOS Enterprise Software Suite [14.1X53-D27.3]
+JUNOS Web Management Platform Package [14.1X53-D27.3]
+JUNOS py-base-i386 [14.1X53-D27.3]
+QFX Installation Software [14.1X53-D42.3]
+JUNOS Host Software [14.1X53-D42.3]
+
+
+
+Command: show system commit
+0   2018-08-14 06:22:04 UTC by super-admin via cli
+1   2018-08-14 06:20:27 UTC by super-admin via cli
+2   2018-08-14 06:20:12 UTC by super-admin via cli
+3   2018-08-14 00:26:34 UTC by super-admin via cli
+4   2018-08-14 00:26:12 UTC by super-admin via cli
+5   2018-08-14 00:21:10 UTC by super-admin via cli
+6   2018-08-14 00:20:53 UTC by super-admin via cli
+7   2018-08-14 00:15:18 UTC by super-admin via cli
+8   2018-08-14 00:15:08 UTC by super-admin via cli
+9   2018-08-14 00:10:20 UTC by super-admin via cli
+10  2018-08-14 00:10:10 UTC by super-admin via cli
+11  2018-08-13 15:29:30 UTC by dkalro via cli
+12  2018-08-13 07:51:57 UTC by dkalro via netconf
+13  2018-08-13 06:37:52 UTC by jcladmin via cli
+14  2018-08-13 06:37:03 UTC by jcladmin via cli
+15  2018-08-13 06:36:54 UTC by jcladmin via cli
+16  2018-08-13 06:35:49 UTC by jcladmin via cli
+17  2018-08-13 06:35:39 UTC by jcladmin via cli
+18  2018-08-10 02:14:28 UTC by jcladmin via cli
+19  2018-08-10 02:14:19 UTC by jcladmin via cli
+20  2018-08-10 02:12:49 UTC by root via cli
+21  2018-08-10 02:12:36 UTC by root via cli
+22  2018-08-10 02:12:35 UTC by root via cli
+23  2018-08-10 02:12:19 UTC by root via cli
+24  2018-08-10 02:12:04 UTC by root via other
+25  2018-08-10 02:10:50 UTC by root via other
+
+
+
+Command: show configuration system services
+ssh {
+    max-sessions-per-connection 32;
+}
+telnet;
+netconf {
+    ssh;
+}
+
+
+
