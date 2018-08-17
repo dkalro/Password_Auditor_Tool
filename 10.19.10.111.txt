@@ -46,32 +46,22 @@ JUNOS Host Software [14.1X53-D42.3]
 
 
 Command: show system commit
-0   2018-08-14 06:22:04 UTC by super-admin via cli
-1   2018-08-14 06:20:27 UTC by super-admin via cli
-2   2018-08-14 06:20:12 UTC by super-admin via cli
-3   2018-08-14 00:26:34 UTC by super-admin via cli
-4   2018-08-14 00:26:12 UTC by super-admin via cli
-5   2018-08-14 00:21:10 UTC by super-admin via cli
-6   2018-08-14 00:20:53 UTC by super-admin via cli
-7   2018-08-14 00:15:18 UTC by super-admin via cli
-8   2018-08-14 00:15:08 UTC by super-admin via cli
-9   2018-08-14 00:10:20 UTC by super-admin via cli
-10  2018-08-14 00:10:10 UTC by super-admin via cli
-11  2018-08-13 15:29:30 UTC by dkalro via cli
-12  2018-08-13 07:51:57 UTC by dkalro via netconf
-13  2018-08-13 06:37:52 UTC by jcladmin via cli
-14  2018-08-13 06:37:03 UTC by jcladmin via cli
-15  2018-08-13 06:36:54 UTC by jcladmin via cli
-16  2018-08-13 06:35:49 UTC by jcladmin via cli
-17  2018-08-13 06:35:39 UTC by jcladmin via cli
-18  2018-08-10 02:14:28 UTC by jcladmin via cli
-19  2018-08-10 02:14:19 UTC by jcladmin via cli
-20  2018-08-10 02:12:49 UTC by root via cli
-21  2018-08-10 02:12:36 UTC by root via cli
-22  2018-08-10 02:12:35 UTC by root via cli
-23  2018-08-10 02:12:19 UTC by root via cli
-24  2018-08-10 02:12:04 UTC by root via other
-25  2018-08-10 02:10:50 UTC by root via other
+0   2018-08-17 23:06:28 UTC by super-admin via cli
+1   2018-08-17 22:51:29 UTC by dkalro via cli
+2   2018-08-17 22:06:42 UTC by dkalro via netconf
+3   2018-08-17 20:51:07 UTC by jcladmin via cli
+4   2018-08-17 20:50:23 UTC by jcladmin via cli
+5   2018-08-17 20:50:14 UTC by jcladmin via cli
+6   2018-08-17 20:49:15 UTC by jcladmin via cli
+7   2018-08-17 20:49:07 UTC by jcladmin via cli
+8   2018-08-16 06:40:59 UTC by jcladmin via cli
+9   2018-08-16 06:40:51 UTC by jcladmin via cli
+10  2018-08-16 06:39:21 UTC by root via cli
+11  2018-08-16 06:39:08 UTC by root via cli
+12  2018-08-16 06:39:08 UTC by root via cli
+13  2018-08-16 06:38:53 UTC by root via cli
+14  2018-08-16 06:38:39 UTC by root via other
+15  2018-08-16 06:37:29 UTC by root via other
 
 
 

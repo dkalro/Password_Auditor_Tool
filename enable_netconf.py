@@ -3,8 +3,8 @@ import subprocess
 
 
 def configure_netconf(ip_address,username,password):
-    #cmd = 'ssh-keygen -R ' + ip_address
-    #subprocess.run([cmd])
+    cmd = 'ssh-keygen -R ' + ip_address
+    subprocess.Popen([cmd], shell=True,stderr=subprocess.PIPE, stdout=subprocess.PIPE).communicate()[0]
     child=pexpect.spawn('ssh -o StrictHostKeyChecking=no ' +username+'@'+ip_address)
     i=child.expect([pexpect.TIMEOUT,'[Pp]assword','Password:'])
     if i == 0:

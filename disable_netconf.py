@@ -1,5 +1,4 @@
 import pexpect
-import subprocess
 
 def delete_netconf(ip_address,username,password):
     child = pexpect.spawn('ssh -o StrictHostKeyChecking=no ' + username + '@' + ip_address)

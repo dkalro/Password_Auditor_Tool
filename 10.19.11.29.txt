@@ -33,38 +33,22 @@ JUNOS py-base-powerpc [15.1R4.6]
 
 
 Command: show system commit
-0   2018-08-14 06:21:37 UTC by admin via cli
-1   2018-08-14 06:20:04 UTC by admin via cli
-2   2018-08-14 06:19:46 UTC by admin via cli
-3   2018-08-14 00:26:06 UTC by admin via cli
-4   2018-08-14 00:25:54 UTC by admin via cli
-5   2018-08-14 00:20:48 UTC by admin via cli
-6   2018-08-14 00:20:35 UTC by admin via cli
-7   2018-08-14 00:15:01 UTC by admin via cli
-8   2018-08-14 00:14:48 UTC by admin via cli
-9   2018-08-14 00:14:02 UTC by admin via cli
-10  2018-08-14 00:13:20 UTC by admin via cli
-11  2018-08-14 00:10:33 UTC by admin via cli
-12  2018-08-14 00:10:05 UTC by admin via cli
-13  2018-08-14 00:09:53 UTC by admin via cli
-14  2018-08-13 23:58:42 UTC by admin via cli
-15  2018-08-13 23:58:34 UTC by admin via netconf
+0   2018-08-17 23:06:10 UTC by admin via cli
+1   2018-08-17 23:03:44 UTC by admin via cli
+2   2018-08-17 23:03:37 UTC by admin via netconf
     Loaded by example.
-16  2018-08-13 23:57:24 UTC by admin via cli
-17  2018-08-13 17:55:19 UTC by admin via cli
-18  2018-08-13 17:55:11 UTC by admin via netconf
-    Loaded by example.
-19  2018-08-13 17:54:05 UTC by admin via cli
-20  2018-08-13 15:29:01 UTC by dkalro via cli
-21  2018-08-13 07:52:01 UTC by dkalro via netconf
-22  2018-08-13 06:37:40 UTC by jcladmin via cli
-23  2018-08-13 06:36:20 UTC by jcladmin via cli
-24  2018-08-13 06:35:57 UTC by jcladmin via cli
-25  2018-08-10 02:20:59 UTC by root via cli
-26  2018-08-10 02:20:54 UTC by root via cli
-27  2018-08-10 02:18:29 UTC by root via cli
-28  2018-08-10 02:17:59 UTC by root via other
-29  2018-08-10 02:16:38 UTC by root via other
+3   2018-08-17 23:03:18 UTC by admin via cli
+4   2018-08-17 22:49:30 UTC by dkalro via cli
+5   2018-08-17 22:06:48 UTC by dkalro via netconf
+6   2018-08-17 20:51:07 UTC by jcladmin via cli
+7   2018-08-17 20:49:46 UTC by jcladmin via cli
+8   2018-08-17 20:49:24 UTC by jcladmin via cli
+9   2018-08-16 06:47:14 UTC by jcladmin via cli
+10  2018-08-16 06:45:51 UTC by root via cli
+11  2018-08-16 06:45:46 UTC by root via cli
+12  2018-08-16 06:43:33 UTC by root via cli
+13  2018-08-16 06:43:01 UTC by root via other
+14  2018-08-16 06:41:33 UTC by root via other
 
 
 
